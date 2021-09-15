@@ -26,7 +26,7 @@ class kafka_helper:
             self._kafkaHost = kafkaBrokerHostname
         else:
             try:
-                self._kafkaHost = BuiltIn().get_variable_value('${KAFKA_HOST}')
+                self._kafkaHost = os.environ['KAFKA_HOST']
             except KeyError as e:
                 # Default it to localhost if not specified
                 self._kafkaHost = "localhost:9093"
