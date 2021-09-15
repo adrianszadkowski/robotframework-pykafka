@@ -59,10 +59,10 @@ class kafka_helper:
         # Get a kafka client
         if self._cafile:
             config = SslConfig(cafile=self._cafile)
-            self._client = KafkaClient(hosts=self._kafkaHost, broker_version=self._kafkaBrokerVersion,
+            self._client = KafkaClient(hosts='kafka:9093',
                                        ssl_config=config)
         else:
-            self._client = KafkaClient(hosts=self._kafkaHost, broker_version=self._kafkaBrokerVersion)
+            self._client = KafkaClient(hosts='kafka:9093')
 
         self._producers = dict()
 
