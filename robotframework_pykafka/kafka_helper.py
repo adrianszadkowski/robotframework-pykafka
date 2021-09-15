@@ -6,6 +6,7 @@ import time
 from pykafka import KafkaClient
 from pykafka.common import OffsetType
 from robotframework_pykafka.utils import *
+from robot.libraries.BuiltIn import BuiltIn
 
 ##################################################
 # Kafka helper class.
@@ -25,10 +26,10 @@ class kafka_helper:
             self._kafkaHost = kafkaBrokerHostname
         else:
             try:
-                self._kafkaHost = os.environ['KAFKA_HOST']
+                self._kafkaHost = BuiltIn().get_variable_value('${KAFKA_HOST}')
             except KeyError as e:
                 # Default it to localhost if not specified
-                self._kafkaHost = "localhost:9092"
+                self._kafkaHost = "localhost:9093"
             except Exception as e:
                 raise e
 
