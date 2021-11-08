@@ -32,8 +32,6 @@ class kafka_helper:
                 self._kafkaHost = "localhost:9093"
             except Exception as e:
                 raise e
-        BuiltIn().log_to_console("\nkafkaBrokerHostname: {}".format(kafkaBrokerHostname))
-        BuiltIn().log_to_console("\nself._kafkaHost: {}".format(self._kafkaHost))
         # Determine the kafka version to use.  Default to 2.3.0 if not specified.
         self._kafkaBrokerVersion = ""
         if kafkaBrokerVersion:
