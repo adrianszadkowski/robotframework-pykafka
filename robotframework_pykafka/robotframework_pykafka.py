@@ -6,7 +6,8 @@ from robot.api.deco import keyword
 
 ##################################################
 # Defines keywords to help in testing kafka stream processing applications.
-class robotframework_pykafka:
+@library(scope='GLOBAL')
+class robotframework_pykafka():
 
     ##################################################
     # Create the kafka_helper.
