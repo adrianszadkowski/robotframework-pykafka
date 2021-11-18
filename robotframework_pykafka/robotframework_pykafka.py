@@ -2,7 +2,7 @@
 
 from robotframework_pykafka.kafka_helper import *
 from robot.api import logger
-from robot.api.deco import keyword
+from robot.api.deco import keyword, library
 
 ##################################################
 # Defines keywords to help in testing kafka stream processing applications.
