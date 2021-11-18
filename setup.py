@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='robotframework_pykafka',
-    packages=[],  # this must be the same as the name above
+    packages=[robotframework_pykafka],  # this must be the same as the name above
     version='0.12',
     python_requires='>=3.5',
     install_requires=[
