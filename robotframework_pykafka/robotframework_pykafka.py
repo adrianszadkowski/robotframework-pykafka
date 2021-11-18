@@ -11,8 +11,8 @@ class robotframework_pykafka():
 
     ##################################################
     # Create the kafka_helper.
-    def __init__(self, host):
-        self.kh = kafka_helper(kafkaBrokerHostname=host)
+    def __init__(self):
+        self.kh = kafka_helper()
         
     ##################################################
     # Produce function
