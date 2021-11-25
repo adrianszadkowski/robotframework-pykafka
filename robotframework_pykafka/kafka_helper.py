@@ -72,7 +72,7 @@ class kafka_helper:
             return self._producers[topicName]
         else:
             topic = self._client.topics[topicName]
-            prod = topic.get_sync_producer()
+            prod = topic.get_sync_producer(pending_timeout_ms=10000)
             self._producers[topicName] = prod
             return prod
 
