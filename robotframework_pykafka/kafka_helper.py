@@ -136,8 +136,11 @@ class kafka_helper:
     def setConsumerOffsetToLatest(self, topicName, consumerGroupName = None):
         assert(topicName)
         top = toStr(topicName)
-        cgn = toStr(consumerGroupName)
-
+        if consumerGroupName:
+            cgn = consumerGroupName
+        else:
+            cgn = topicName
+            
         log("Resetting offset to latest for topic "+top+" and consumer group "+str(cgn))
         if (top, cgn) in self._consumers:
             del self._consumers[(top, cgn)]
@@ -148,7 +151,10 @@ class kafka_helper:
     def setConsumerOffsetToEarliest(self, topicName, consumerGroupName = None):
         assert(topicName)
         top = toStr(topicName)
-        cgn = toStr(consumerGroupName)
+        if consumerGroupName:
+            cgn = consumerGroupName
+        else:
+            cgn = topicName
 
         log("Resetting offset to earliest for topic "+top+" and consumer group "+str(cgn))
         if (top, cgn) in self._consumers:
